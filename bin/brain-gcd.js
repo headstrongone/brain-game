@@ -2,11 +2,11 @@
 import {brain_gcd} from "../src/brain-gcd_module.js";
 import promptly from "promptly";
 
-let i = 5;
+let playCount = parseInt(await promptly.prompt('How many times you want to play?:'));
 
 console.log('Find the greatest common divisor of given numbers');
 
-while (i > 0){
+while (playCount){
     let a = Math.floor(Math.random() * 90 + 10), b = Math.floor(Math.random() * 90 + 10);
     console.log(`Question: ${a} ${b}`);
     let ans = brain_gcd(a, b);
@@ -16,5 +16,5 @@ while (i > 0){
     } else {
         console.log(`'${enteredValue}' is not correct answer. Correct answer is '${ans}'`);
     }
-    i--;
+    playCount--;
 }
