@@ -1,2 +1,3 @@
-// export const begin = () => {
+export const begin = () => {
     console.log('Welcome to the Brain Games!');
+}
