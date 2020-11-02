@@ -7,6 +7,5 @@ brain-games:
 lint:
 	npx install eslint .
 
-
 publish:
 	npm publish --dry-run
