@@ -2,7 +2,7 @@
 
 import rls from 'readline-sync';
 import brain_progression from '../src/brain-progression_module.js';
-import welcome from './brain-games-welcome';
+import welcome from './brain-games-welcome.js';
 
 const progression_start = () => {
   welcome();
