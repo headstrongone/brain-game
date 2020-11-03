@@ -1,11 +1,10 @@
 #!/usr/bin/env node
-import {begin} from "./bin/brain-games.js";
-import promptly from "promptly";
+import promptly from 'promptly';
+import { begin } from './bin/brain-games.js';
 
 begin();
 
 (async () => {
-    const name = await promptly.prompt('Please tell me your name: ');
-    console.log(`Welcome, ${name}!`);
+  const name = await promptly.prompt('Please tell me your name: ');
+  console.log(`Welcome, ${name}!`);
 })();
-

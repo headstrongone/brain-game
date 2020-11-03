@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {brain_prime} from "../src/brain-prime_module.js";
+import brain_prime from "../src/brain-prime_module.js";
 import promptly from "promptly";
 
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');

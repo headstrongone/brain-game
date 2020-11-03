@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {brain_progression} from "../src/brain-progression_module.js";
+import brain_progression from "../src/brain-progression_module.js";
 import promptly from 'promptly';
 
 

@@ -5,7 +5,7 @@ brain-games:
 	 node index.js
 
 lint:
-	npx install eslint .
+	npx eslint .
 
 publish:
 	npm publish --dry-run
