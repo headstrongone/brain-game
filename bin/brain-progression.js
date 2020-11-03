@@ -29,7 +29,7 @@ while(playCount){
         console.log('Correct!');
         winCount++;
     } else {
-        console.log(`${userAnswer} is not right answer. The correct answer is ${answerValue}.`);
+        console.log(`'${userAnswer}' is not right answer. The correct answer is '${answerValue}'.`);
     }
 
     playCount--;
