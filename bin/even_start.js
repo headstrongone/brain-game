@@ -1,3 +1,5 @@
-import start_even from "./src/brain-even.js";
+#!/usr/bin/env node
 
-start_even();
+import brain_even from './src/brain_even.js';
+
+brain_even();

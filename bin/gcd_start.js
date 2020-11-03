@@ -1,3 +1,5 @@
-import gcd_start from "./src/brain-gcd.js";
+#!/usr/bin/env node
 
-gcd_start();
+import brain_gcd from './src/brain_gcd.js';
+
+brain_gcd();
