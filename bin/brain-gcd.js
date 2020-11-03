@@ -12,8 +12,8 @@ let winCount = 0;
 const playEndCongrats = playCount;
 
 while (playCount) {
-  const a = Math.floor(Math.random() * 90 + 10); const
-    b = Math.floor(Math.random() * 90 + 10);
+  const a = Math.floor(Math.random() * 90 + 10);
+  const b = Math.floor(Math.random() * 90 + 10);
   console.log(`Question: ${a} ${b}`);
   const ans = brain_gcd(a, b);
 

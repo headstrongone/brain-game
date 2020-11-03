@@ -12,26 +12,26 @@ let winCount = 0;
 const playEndCongrats = playCount;
 
 while (playCount) {
-    const a = Math.floor(Math.random() * 90 + 10);
-    console.log(`Question: ${a}`);
-    const ans = brain_even(a);
+  const a = Math.floor(Math.random() * 90 + 10);
+  console.log(`Question: ${a}`);
+  const ans = brain_even(a);
 
-    const enteredValue = rls.question('Your answer: ');
-    let correctAnswer;
+  const enteredValue = rls.question('Your answer: ');
+  let correctAnswer;
 
-    if (ans) {
-        correctAnswer = 'no';
-    } else {
-        correctAnswer = 'yes';
-    }
+  if (ans) {
+    correctAnswer = 'no';
+  } else {
+    correctAnswer = 'yes';
+  }
 
-    if ((enteredValue === 'yes' && !ans) || (enteredValue === 'no' && ans)) {
-        console.log('Correct!');
-        winCount++;
-    } else {
-        console.log(`'${enteredValue}' is not correct answer. Correct answer is '${correctAnswer}'`);
-    }
-    playCount--;
+  if ((enteredValue === 'yes' && !ans) || (enteredValue === 'no' && ans)) {
+    console.log('Correct!');
+    winCount++;
+  } else {
+    console.log(`'${enteredValue}' is not correct answer. Correct answer is '${correctAnswer}'`);
+  }
+  playCount--;
 }
 
 console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);
