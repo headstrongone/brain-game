@@ -3,29 +3,33 @@ import rls from 'readline-sync';
 import brain_gcd from '../src/brain-gcd_module.js';
 import welcome from './brain-games-welcome.js';
 
-welcome();
+const gcd_start = () => {
+  welcome();
 
-console.log('Find the greatest common divisor of given numbers');
+  console.log('Find the greatest common divisor of given numbers');
 
-let playCount = rls.question('How many times you want to play?: ');
-let winCount = 0;
-const playEndCongrats = playCount;
+  let playCount = rls.question('How many times you want to play?: ');
+  let winCount = 0;
+  const playEndCongrats = playCount;
 
-while (playCount) {
-  const a = Math.floor(Math.random() * 90 + 10);
-  const b = Math.floor(Math.random() * 90 + 10);
-  console.log(`Question: ${a} ${b}`);
-  const ans = brain_gcd(a, b);
+  while (playCount) {
+    const a = Math.floor(Math.random() * 90 + 10);
+    const b = Math.floor(Math.random() * 90 + 10);
+    console.log(`Question: ${a} ${b}`);
+    const ans = brain_gcd(a, b);
 
-  const enteredValue = rls.question('Your answer: ');
+    const enteredValue = rls.question('Your answer: ');
 
-  if (ans === enteredValue) {
-    console.log('Correct!');
-    winCount++;
-  } else {
-    console.log(`'${enteredValue}' is not correct answer. Correct answer is '${ans}'`);
+    if (ans === enteredValue) {
+      console.log('Correct!');
+      winCount++;
+    } else {
+      console.log(`'${enteredValue}' is not correct answer. Correct answer is '${ans}'`);
+    }
+    playCount--;
   }
-  playCount--;
+
+  console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);
 }
 
-console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);
+export default gcd_start;
