@@ -7,7 +7,8 @@
   "bin": {
     "brain-games": "index.js",
     "brain-gcd": "bin/brain-gcd.js",
-    "brain-prime": "bin/brain-prime.js"
+    "brain-prime": "bin/brain-prime.js",
+    "brain-progression": "bin/brain-progression.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
