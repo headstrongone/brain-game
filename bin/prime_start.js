@@ -1,3 +1,3 @@
-import prime_start from "./brain-prime.js";
+import prime_start from "./src/brain-prime.js";
 
 prime_start();

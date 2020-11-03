@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 import rls from 'readline-sync';
-import brain_gcd from '../src/brain-gcd_module.js';
+import brain_gcd from '../../src/brain-gcd_module.js';
 import welcome from './brain-games-welcome.js';
 
 const gcd_start = () => {
   welcome();
 
-  console.log('Find the greatest common divisor of given numbers');
+  console.log('Find the greatest common divisor of given numbers.');
 
-  let playCount = rls.question('How many times you want to play?: ');
+  let playCount = rls.question('How many times do you want to play?: ');
   let winCount = 0;
   const playEndCongrats = playCount;
 

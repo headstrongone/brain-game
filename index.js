@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import rls from 'readline-sync';
-import start_even from "./bin/brain-even.js";
-import progression_start from "./bin/brain-progression.js";
-import gcd_start from "./bin/brain-gcd.js";
-import prime_start from "./bin/brain-prime.js";
+import start_even from "./bin/src/brain-even.js";
+import progression_start from "./bin/src/brain-progression.js";
+import gcd_start from "./bin/src/brain-gcd.js";
+import prime_start from "./bin/src/brain-prime.js";
 
 console.log('There are 5 games you can choose to play:');
 console.log('1 -\t Find Prime Number');

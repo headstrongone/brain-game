@@ -1,3 +1,3 @@
-import gcd_start from "./brain-gcd.js";
+import gcd_start from "./src/brain-gcd.js";
 
 gcd_start();

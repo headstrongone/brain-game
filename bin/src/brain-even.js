@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import rls from 'readline-sync';
-import brain_even from '../src/brain-even_module.js';
+import brain_even from '../../src/brain-even_module.js';
 import welcome from './brain-games-welcome.js';
 
 const start_even = () => {

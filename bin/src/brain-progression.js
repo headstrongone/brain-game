@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 import rls from 'readline-sync';
-import brain_progression from '../src/brain-progression_module.js';
+import brain_progression from '../../src/brain-progression_module.js';
 import welcome from './brain-games-welcome.js';
 
 const progression_start = () => {
   welcome();
 
-  let playCount = rls.question('How many times you want to play?:');
+  let playCount = rls.question('How many times do you want to play?:');
   let winCount = 0;
   const playEndCongrats = playCount;
 

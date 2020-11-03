@@ -1,3 +1,3 @@
-import progression_start from "./brain-progression.js";
+import progression_start from "./src/brain-progression.js";
 
 progression_start();
