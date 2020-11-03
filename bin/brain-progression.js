@@ -4,6 +4,8 @@ import promptly from 'promptly';
 
 
 let playCount = parseInt(await promptly.prompt('How many times you want to play?:'));
+let winCount = 0;
+let playEndCongrats = playCount;
 
 console.log('What number missing in this progression?');
 
@@ -25,6 +27,7 @@ while(playCount){
 
     if (userAnswer === answerValue){
         console.log('Correct!');
+        winCount++;
     } else {
         console.log(`${userAnswer} is not right answer. The correct answer is ${answerValue}.`);
     }
@@ -32,3 +35,4 @@ while(playCount){
     playCount--;
 }
 
+console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);

@@ -5,6 +5,8 @@ import promptly from "promptly";
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 let playCount = parseInt(await promptly.prompt('How many times you want to play?:'));
+let winCount = 0;
+let playEndCongrats = playCount;
 
 while (playCount){
     let a = Math.floor(Math.random() * 90 + 10);
@@ -17,9 +19,12 @@ while (playCount){
 
     if ((enteredValue === 'yes' && ans) || (enteredValue === 'no' && !ans)){
         console.log('Correct!');
+        winCount++;
     } else {
         console.log(`'${enteredValue}' is not correct answer. Correct answer is '${correctAnswer}'`);
     }
 
     playCount--;
 }
+
+console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);
