@@ -5,7 +5,7 @@ import welcome from './brain-games-welcome.js';
 const brain_progression = () => {
   welcome();
 
-  let playCount = rls.question('How many times do you want to play?:');
+  let playCount = rls.question('How many times do you want to play?: ');
   let winCount = 0;
   const playEndCongrats = playCount;
 

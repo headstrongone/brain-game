@@ -19,7 +19,7 @@ const choose1 = parseInt(choose, 10);
 console.log('====================');
 switch (choose1) {
   case 1:
-    brain_even();
+    brain_prime();
     break;
   case 2:
     brain_gcd();
@@ -28,7 +28,7 @@ switch (choose1) {
     brain_progression();
     break;
   case 4:
-    brain_prime();
+    brain_even();
     break;
   default:
     console.log('ERROR! Type number 1 - 4.');
