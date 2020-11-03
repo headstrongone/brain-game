@@ -1,4 +1,4 @@
-const brain_progression = () => {
+const brain_progression_module = () => {
   const progressionLength = Math.floor(Math.random() * (10 - 5 + 1) + 5);
   let progressionBegin = Math.floor(Math.random() * 90 + 10);
   const progressionStep = Math.floor(Math.random() * 90 + 10);
@@ -20,4 +20,4 @@ const brain_progression = () => {
   return [progarr, deletedValue];
 };
 
-export default brain_progression;
+export default brain_progression_module;

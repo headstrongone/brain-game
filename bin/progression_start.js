@@ -1,3 +1,5 @@
-import progression_start from "./src/brain-progression.js";
+#!/usr/bin/env node
 
-progression_start();
+import brain_progression from './src/brain_progression.js';
+
+brain_progression();

@@ -1,4 +1,4 @@
-const brain_prime = (num) => {
+const brain_prime_module = (num) => {
   for (let i = 2; i <= num / 2; i++) {
     if (num % i === 0) {
       return false;
@@ -7,4 +7,4 @@ const brain_prime = (num) => {
   return true;
 };
 
-export default brain_prime;
+export default brain_prime_module;

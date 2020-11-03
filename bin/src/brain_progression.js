@@ -1,10 +1,8 @@
-#!/usr/bin/env node
-
 import rls from 'readline-sync';
-import brain_progression from '../../src/brain-progression_module.js';
+import brain_progression_module from '../../src/brain_progression_module.js';
 import welcome from './brain-games-welcome.js';
 
-const progression_start = () => {
+const brain_progression = () => {
   welcome();
 
   let playCount = rls.question('How many times do you want to play?:');
@@ -14,7 +12,7 @@ const progression_start = () => {
   console.log('What number missing in this progression?');
 
   while (playCount) {
-    const [questArray, answerValue] = brain_progression();
+    const [questArray, answerValue] = brain_progression_module();
 
     process.stdout.write('Question: ');
 
@@ -27,7 +25,7 @@ const progression_start = () => {
 
     process.stdout.write('\n');
 
-    const userAnswer = rls.question('Your answer is: ');
+    const userAnswer = parseInt(rls.question('Your answer is: '), 10);
 
     if (userAnswer === answerValue) {
       console.log('Correct!');
@@ -40,6 +38,6 @@ const progression_start = () => {
   }
 
   console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);
-}
+};
 
-export default progression_start;
+export default brain_progression;

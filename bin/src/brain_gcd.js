@@ -1,9 +1,8 @@
-#!/usr/bin/env node
 import rls from 'readline-sync';
-import brain_gcd from '../../src/brain-gcd_module.js';
+import brain_gcd_module from '../../src/brain_gcd_module.js';
 import welcome from './brain-games-welcome.js';
 
-const gcd_start = () => {
+const brain_gcd = () => {
   welcome();
 
   console.log('Find the greatest common divisor of given numbers.');
@@ -16,9 +15,9 @@ const gcd_start = () => {
     const a = Math.floor(Math.random() * 90 + 10);
     const b = Math.floor(Math.random() * 90 + 10);
     console.log(`Question: ${a} ${b}`);
-    const ans = brain_gcd(a, b);
+    const ans = brain_gcd_module(a, b);
 
-    const enteredValue = rls.question('Your answer: ');
+    const enteredValue = parseInt(rls.question('Your answer: '), 10);
 
     if (ans === enteredValue) {
       console.log('Correct!');
@@ -30,6 +29,6 @@ const gcd_start = () => {
   }
 
   console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);
-}
+};
 
-export default gcd_start;
+export default brain_gcd;

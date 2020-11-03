@@ -1,3 +1,5 @@
-import prime_start from "./src/brain-prime.js";
+#!/usr/bin/env node
 
-prime_start();
+import brain_prime from './src/brain_prime.js';
+
+brain_prime();

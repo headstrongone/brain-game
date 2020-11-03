@@ -1,9 +1,8 @@
-#!/usr/bin/env node
 import rls from 'readline-sync';
-import brain_prime from '../../src/brain-prime_module.js';
+import brain_prime_module from '../../src/brain_prime_module.js';
 import welcome from './brain-games-welcome.js';
 
-const prime_start = () => {
+const brain_prime = () => {
   welcome();
 
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -15,7 +14,7 @@ const prime_start = () => {
   while (playCount) {
     const a = Math.floor(Math.random() * 90 + 10);
     console.log(`Question: ${a}`);
-    const ans = brain_prime(a);
+    const ans = brain_prime_module(a);
     const enteredValue = rls.question('Your answer: ');
     let correctAnswer;
 
@@ -38,4 +37,4 @@ const prime_start = () => {
   console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);
 };
 
-export default prime_start;
+export default brain_prime;

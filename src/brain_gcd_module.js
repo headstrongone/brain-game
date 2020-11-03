@@ -1,4 +1,4 @@
-const brain_gcd = (a, b) => {
+const brain_gcd_module = (a, b) => {
   for (let i = a; i > 0; i--) {
     if (a % i === 0 && b % i === 0) {
       return i;
@@ -7,4 +7,4 @@ const brain_gcd = (a, b) => {
   return 1;
 };
 
-export default brain_gcd;
+export default brain_gcd_module;
