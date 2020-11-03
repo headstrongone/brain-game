@@ -1,28 +1,31 @@
 #!/usr/bin/env node
-import brain_gcd from "../src/brain-gcd_module.js";
-import promptly from "promptly";
+import rls from 'readline-sync';
+import brain_gcd from '../src/brain-gcd_module.js';
+import welcome from './brain-games-welcome.js';
 
-let playCount = parseInt(await promptly.prompt('How many times you want to play?:'));
-let winCount = 0;
-let playEndCongrats = playCount;
-
+welcome();
 
 console.log('Find the greatest common divisor of given numbers');
 
-while (playCount){
-    let a = Math.floor(Math.random() * 90 + 10), b = Math.floor(Math.random() * 90 + 10);
-    console.log(`Question: ${a} ${b}`);
-    let ans = brain_gcd(a, b);
+let playCount = rls.question('How many times you want to play?: ');
+let winCount = 0;
+const playEndCongrats = playCount;
 
-    const enteredValue = parseInt(await promptly.prompt('Your answer: '));
+while (playCount) {
+  const a = Math.floor(Math.random() * 90 + 10); const
+    b = Math.floor(Math.random() * 90 + 10);
+  console.log(`Question: ${a} ${b}`);
+  const ans = brain_gcd(a, b);
 
-    if (ans === enteredValue){
-        console.log('Correct!');
-        winCount++;
-    } else {
-        console.log(`'${enteredValue}' is not correct answer. Correct answer is '${ans}'`);
-    }
-    playCount--;
+  const enteredValue = rls.question('Your answer: ');
+
+  if (ans === enteredValue) {
+    console.log('Correct!');
+    winCount++;
+  } else {
+    console.log(`'${enteredValue}' is not correct answer. Correct answer is '${ans}'`);
+  }
+  playCount--;
 }
 
 console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);

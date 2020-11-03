@@ -1,30 +1,37 @@
 #!/usr/bin/env node
-import brain_prime from "../src/brain-prime_module.js";
-import promptly from "promptly";
+import rls from 'readline-sync';
+import brain_prime from '../src/brain-prime_module.js';
+import welcome from './brain-games-welcome.js';
+
+welcome();
 
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-let playCount = parseInt(await promptly.prompt('How many times you want to play?:'));
+let playCount = rls.question('How many times do you want to play?: ');
 let winCount = 0;
-let playEndCongrats = playCount;
+const playEndCongrats = playCount;
 
-while (playCount){
-    let a = Math.floor(Math.random() * 90 + 10);
-    console.log(`Question: ${a}`);
-    let ans = brain_prime(a);
-    const enteredValue = await promptly.prompt('Your answer: ');
-    let correctAnswer;
+while (playCount) {
+  const a = Math.floor(Math.random() * 90 + 10);
+  console.log(`Question: ${a}`);
+  const ans = brain_prime(a);
+  const enteredValue = rls.question('Your answer: ');
+  let correctAnswer;
 
-    !ans ? correctAnswer = 'no' : correctAnswer = 'yes';
+  if (!ans) {
+    correctAnswer = 'no';
+  } else {
+    correctAnswer = 'yes';
+  }
 
-    if ((enteredValue === 'yes' && ans) || (enteredValue === 'no' && !ans)){
-        console.log('Correct!');
-        winCount++;
-    } else {
-        console.log(`'${enteredValue}' is not correct answer. Correct answer is '${correctAnswer}'`);
-    }
+  if ((enteredValue === 'yes' && ans) || (enteredValue === 'no' && !ans)) {
+    console.log('Correct!');
+    winCount++;
+  } else {
+    console.log(`'${enteredValue}' is not correct answer. Correct answer is '${correctAnswer}'`);
+  }
 
-    playCount--;
+  playCount--;
 }
 
 console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);

@@ -1,38 +1,41 @@
 #!/usr/bin/env node
-import brain_progression from "../src/brain-progression_module.js";
-import promptly from 'promptly';
 
+import rls from 'readline-sync';
+import brain_progression from '../src/brain-progression_module.js';
+import welcome from './brain-games-welcome';
 
-let playCount = parseInt(await promptly.prompt('How many times you want to play?:'));
+welcome();
+
+let playCount = rls.question('How many times you want to play?:');
 let winCount = 0;
-let playEndCongrats = playCount;
+const playEndCongrats = playCount;
 
 console.log('What number missing in this progression?');
 
-while(playCount){
-    const [questArray, answerValue] = brain_progression();
+while (playCount) {
+  const [questArray, answerValue] = brain_progression();
 
-    process.stdout.write('Question: ');
+  process.stdout.write('Question: ');
 
-    for (let i = 0; i < questArray.length; i++){
-        if (questArray[i] === null){
-            questArray[i] = '...';
-        }
-        process.stdout.write(questArray[i] + '  ');
+  for (let i = 0; i < questArray.length; i++) {
+    if (questArray[i] === null) {
+      questArray[i] = '...';
     }
+    process.stdout.write(`${questArray[i]}  `);
+  }
 
-    process.stdout.write('\n');
+  process.stdout.write('\n');
 
-    let userAnswer = parseInt(await promptly.prompt('Your answer is: '));
+  const userAnswer = rls.question('Your answer is: ');
 
-    if (userAnswer === answerValue){
-        console.log('Correct!');
-        winCount++;
-    } else {
-        console.log(`'${userAnswer}' is not right answer. The correct answer is '${answerValue}'.`);
-    }
+  if (userAnswer === answerValue) {
+    console.log('Correct!');
+    winCount++;
+  } else {
+    console.log(`'${userAnswer}' is not right answer. The correct answer is '${answerValue}'.`);
+  }
 
-    playCount--;
+  playCount--;
 }
 
 console.log(`You answered right ${winCount} of ${playEndCongrats}! Congratulations!`);
